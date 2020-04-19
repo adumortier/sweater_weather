@@ -1,5 +1,7 @@
 class WeatherForecast
 
+  attr_reader :forecast_hourly, :forecast_daily
+
   def initialize(info) 
     @forecast_hourly = format_hourly(info[:hourly][0..7])
     @forecast_daily = format_daily(info[:daily][0..6])
