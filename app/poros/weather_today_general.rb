@@ -7,6 +7,7 @@ class WeatherTodayGeneral
     @description = info[:current][:weather].first[:description]
     @temperature_high = info[:daily].first[:temp][:min].round
     @temperature_low = info[:daily].first[:temp][:max].round
+    @icon = "http://openweathermap.org/img/wn/" + info[:current][:weather].first[:icon] + "@2x.png"
   end
 
   def format_time(time)

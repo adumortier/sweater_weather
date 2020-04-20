@@ -11,7 +11,7 @@ class WeatherForecast
     hourly_forecast.map do |forecast|
       { time: format_time(forecast[:dt]), 
         temperature: forecast[:temp].round, 
-        icon: forecast[:weather].first[:icon] }
+        icon: "http://openweathermap.org/img/wn/" + forecast[:weather].first[:icon] + "@2x.png"}
     end
   end
 
@@ -22,7 +22,8 @@ class WeatherForecast
         precipitation_mm: format_precipitation(forecast).round, 
         high_temp: forecast[:temp][:max].round,
         low_temp: forecast[:temp][:min].round,
-        icon: forecast[:weather].first[:icon] }
+        icon: "http://openweathermap.org/img/wn/" + forecast[:weather].first[:icon] + "@2x.png"
+      }
     end
   end
 
