@@ -8,13 +8,6 @@ class AmypodeService
     JSON.parse(response.body, symbolize_names: true)[:data][:attributes]
   end
 
-  def self.get_antipode_weather(coordinates)
-    antipode_weather = OpenWeatherService.get_weather_data(coordinates[:lat],coordinates[:long])
-    current_temp = antipode_weather[:current][:temp]
-    forecast = {  summary: antipode_weather[:current][:weather].first[:description], 
-                  current_temperature: current_temp }
-    return forecast
-  end
   
 
   private
