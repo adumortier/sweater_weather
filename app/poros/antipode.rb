@@ -4,10 +4,9 @@ class Antipode
 
   def initialize(info)
     @id = 'null'
-    @location_name = info[:location_name]
+    @location_name = info[:location_name].split(',')[1..-1].map {|place| place.strip}.join(', ')
     @forecast = {summary: info[:forecast][:summary], current_temperature: info[:forecast][:current_temperature].to_s} 
     @search_location = info[:search_location]
-    @location_name = info[:location_name]
   end
 
   def self.weather_summary(coordinates)
