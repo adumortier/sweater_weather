@@ -8,12 +8,10 @@ class AmypodeService
     JSON.parse(response.body, symbolize_names: true)[:data][:attributes]
   end
 
-  
-
   private
 
   def self.conn
-    Faraday.new "http://amypode.herokuapp.com" do |conn|
+    Faraday.new 'http://amypode.herokuapp.com' do |conn|
         conn.headers['api_key'] = ENV['AMYPODE_API_KEY']
     end
   end

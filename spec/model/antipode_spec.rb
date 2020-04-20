@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Background do
+RSpec.describe Antipode do
 
   describe 'attributes' do
 
