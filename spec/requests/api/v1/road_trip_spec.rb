@@ -31,4 +31,21 @@ describe 'Road Trip' do
     expect(resp['data']['attributes']['message']).to eq('Your API key is invalid')
   end
 
+  it 'returns an error message if query params are missing', :vcr do
+
+    post '/api/v1/users?email=whenever@example.com&password=password&password_confirmation=password' 
+    expect(response.status).to eq(201)
+    resp = JSON.parse(response.body)
+
+    api_key = resp['data']['attributes']['api_key']
+   
+    post "/api/v1/road_trip?destination=Pueblo,CO&api_key=#{api_key}"
+
+    expect(response).to_not be_successful
+    expect(response.status).to eq(401)
+    resp = JSON.parse(response.body)
+
+    expect(resp['data']['attributes']['message']).to eq('You have missing query parameters')
+  end
+
 end
