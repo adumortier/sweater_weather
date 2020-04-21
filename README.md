@@ -1,10 +1,50 @@
-### Sweater Weather API
+## Sweater Weather API
 
-This sweater weather API is a a 3-day solo project that provides the Sweater Weather App the data it needs for its views. It interacts with the google and openweather and unsplash APIs and returns JSON API 1.0 compliant data.
+This sweater weather API is a a 3-day solo project that provides the Sweater Weather App the data it needs for its views. It interacts with the Google, OpenWeather and Unsplash APIs and returns JSON API 1.0 compliant data.
 
 https://thesweaterweather.herokuapp.com/
 
-### Sweater Weather Access Points 
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Installation
+
+1. Clone the repo
+```sh
+git clone git@github.com:adumortier/sweater_weather.git
+```
+2. Install the Gem File
+```sh
+bundle install
+```
+3. Create your environment
+```sh
+rails db:create
+rails db:migrate
+```
+4. Install Figaro
+```sh
+bundle exec figaro install
+```
+5. Visit the Google API, OpenWeather and Unsplash site to retrieve your API keys. The keys must be stored securely in the `application.yml` file of your `app/config` directory.
+
+```sh
+GOOGLE_API_KEY: <YOUR GOOGLE API KEY HERE>
+OPEN_WEATHER_API_KEY: <YOUR OPEN WEATHER API KEY HERE>
+
+UNSPLASH_ACCESS_KEY: <YOUR UNSPLASH ACCESS KEY HERE>
+UNSPLASH_SECRET_KEY: <YOUR UNSPLASH SECRET KEY HERE>
+
+AMYPODE_API_KEY: <YOUR AMYPODE API KEY HERE>
+```
+6. Add your keys to your app on Heroku 
+
+```sh
+figaro heroku:set -e production
+```
+
+## Sweater Weather Access Points 
 
 Retrieve a background picture for a specific location:
 ```sh
