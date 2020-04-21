@@ -8,11 +8,11 @@ class Api::V1::RoadTripController < ApplicationController
     render json: road_trip.serialize, status: 200
   end
 
+  private 
+  
   def missing_query_parameters?
     query_params[:origin].nil? || query_params[:destination].nil? || query_params[:destination] =='' || query_params[:origin] == ''
   end
-
-  private 
 
   def query_params
     params.permit(:origin, :destination, :api_key)
