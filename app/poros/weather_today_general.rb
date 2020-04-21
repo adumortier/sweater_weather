@@ -15,8 +15,9 @@ class WeatherTodayGeneral
   end
 
   def format_location(location)
-    city, state = location.split(',')
-    city.capitalize + ', ' + state.upcase
+    # city, state = location.split(',')
+    # city.capitalize + ', ' + state.upcase
+    location.capitalize
   end
 
 end

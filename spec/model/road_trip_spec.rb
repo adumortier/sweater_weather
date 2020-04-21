@@ -5,12 +5,12 @@ RSpec.describe RoadTrip do
   describe "attributes" do
 
     it "has a road trip info" do
-      road_trip = RoadTrip.new('Denver, CO', 'Pueblo,CO', '2 hrs', 56, 'mostly cloudy')
+      road_trip = RoadTrip.new('Denver, CO', 'Pueblo,CO', 1500, 56, 'mostly cloudy')
       expect(road_trip).to be_a_kind_of(RoadTrip)
       expect(road_trip).to have_attributes( :id => "poro", 
                                         :origin => 'Denver, CO', 
                                         :destination => 'Pueblo,CO',
-                                        :travel_time => '2 hrs',
+                                        :travel_time_in_sec => 1500,
                                         :arrival_temp => 56,
                                         :arrival_weather => 'mostly cloudy'
                                       )

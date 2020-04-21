@@ -14,7 +14,7 @@ RSpec.describe WeatherTodayGeneral do
     end
 
     it ".format_location" do
-      expect(@weather_info.format_location('denver,co')).to eq('Denver, CO')
+      expect(@weather_info.format_location('denver,co')).to eq('Denver,co')
     end
   end
   
