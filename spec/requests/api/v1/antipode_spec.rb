@@ -6,7 +6,9 @@ describe 'antipode' do
 
     get '/api/v1/antipode?location=Hong-Kong'
     expect(response).to be_successful
+    expect(response.status).to eq(200)
     result = JSON.parse(response.body)
+    
     expect(result['data']['attributes']['location_name']).to eq('Jujuy, Argentina')
     expect(result['data']['attributes']['search_location']).to eq('Hong-Kong')
     expect(result['data']['attributes']['forecast']['summary'].empty?).to eq(false)
