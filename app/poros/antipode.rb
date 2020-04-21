@@ -15,5 +15,21 @@ class Antipode
     return {  summary: antipode_weather[:current][:weather].first[:description], 
               current_temperature: current_temp.round }
   end
+
+  def self.get_info(location)
+    current_coordinates = GoogleGeocodingService.get_coordinates(location)
+    antipode_coordinates = AmypodeService.get_antipode_coordinates(current_coordinates[:lat],current_coordinates[:lng])
+    antipode_location = GoogleGeocodingService.get_location(antipode_coordinates)
+    antipode_weather = Antipode.weather_summary(antipode_coordinates)
+    info = {  forecast: antipode_weather, 
+              search_location: location, 
+              location_name: antipode_location[:plus_code][:compound_code]
+            }
+    Antipode.new(info)
+  end
+
+  def serialize
+    AntipodeSerializer.new(self)
+  end
   
 end
