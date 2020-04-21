@@ -14,12 +14,12 @@ class Api::V1::UsersController < ApplicationController
 
   private 
 
-  def invalid_password?(user)
-    !user.authenticate(user_params[:password])
-  end
-
   def user_params
     params.permit(:email, :password, :password_confirmation)
+  end
+
+  def invalid_password?(user)
+    !user.authenticate(user_params[:password])
   end
 
   def mismatching_password?
@@ -27,6 +27,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def missing_field?
-    user_params[:password] == '' || user_params[:password_confirmation] == '' || user_params[:email] == ''
+    user_params[:password] == '' || user_params[:password_confirmation] == '' || user_params[:email] == '' ||
+    user_params[:password].nil? || user_params[:password_confirmation].nil? || user_params[:email].nil?
   end
 end
