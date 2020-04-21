@@ -6,5 +6,14 @@ class Background
     @id = 'poro'
     @url = url
   end 
+
+  def self.get_image_url(location)
+    url = UnsplashService.get_image_url(location)
+    Background.new(url)
+  end
+
+  def serialize
+    BackgroundSerializer.new(self)
+  end
   
 end

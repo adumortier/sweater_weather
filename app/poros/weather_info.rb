@@ -9,4 +9,14 @@ class WeatherInfo
     @weather_forecast = WeatherForecast.new(info)
   end
 
+  def self.get_forecast(location)
+    coordinates = GoogleGeocodingService.get_coordinates(location)
+    weather_data = OpenWeatherService.get_weather_data(coordinates[:lat], coordinates[:lng])
+    WeatherInfo.new(weather_data, location)
+  end
+
+  def serialize
+    WeatherInfoSerializer.new(self)
+  end
+
 end
