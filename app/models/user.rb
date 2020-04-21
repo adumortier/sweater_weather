@@ -14,6 +14,10 @@ class User < ApplicationRecord
     end
   end
 
+  def serialize
+    UsersSerializer.new(self)
+  end
+
   private 
 
   def create_api_key
