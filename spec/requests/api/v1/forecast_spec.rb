@@ -13,4 +13,13 @@ describe 'Forecast' do
     expect(result[:data][:attributes].keys.include?(:weather_forecast)).to eq(true)
   end
 
+  it 'sends an error is params are missing', :vcr do
+
+    get '/api/v1/forecast?location='
+    expect(response).to_not be_successful
+    expect(response.status).to eq(401)
+    resp = JSON.parse(response.body)
+    expect(resp['data']['attributes']['message']).to eq('You have missing query parameters')
+  end
+
 end
