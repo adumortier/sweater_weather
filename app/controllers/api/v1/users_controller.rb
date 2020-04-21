@@ -1,31 +1,32 @@
 class Api::V1::UsersController < ApplicationController
 
   def create
-    if user_params[:password]=='' || user_params[:password_confirmation] ==''
-      return render json: ErrorSerializer.new(Error.new('password and confirmation password can not be empty')), status: 400
-    end
+    return render json: Error.serialize('email, password and confirmation can not be empty'), status: 400 if missing_field?
 
-    if valid_query?
-      user = User.get_user(user_params)
-      if user.authenticate(user_params[:password])
-        user.save
-        render json: UsersSerializer.new(user), status: 201
-      else
-        render json: ErrorSerializer.new(Error.new('Email and password credentials do not match')), status: 400
-      end
-    else
-      render json: ErrorSerializer.new(Error.new('password and password confirmation do not match')), status: 400
-    end
-    
+    return render json: Error.serialize('password and confirmation do not match'), status: 400 if mismatching_password?
+
+    user = User.get_user(user_params)
+    return render json: Error.serialize('credentials do not match'), status: 400 if invalid_password?(user)
+
+    user.save
+    render json: user.serialize, status: 201
   end
 
   private 
+
+  def invalid_password?(user)
+    !user.authenticate(user_params[:password])
+  end
 
   def user_params
     params.permit(:email, :password, :password_confirmation)
   end
 
-  def valid_query?
-    (user_params[:password] == user_params[:password_confirmation]) || (user_params[:password] =='') || (user_params[:password_confirmation] =='')
+  def mismatching_password?
+    user_params[:password] != user_params[:password_confirmation]
+  end
+
+  def missing_field?
+    user_params[:password] == '' || user_params[:password_confirmation] == '' || user_params[:email] == ''
   end
 end

@@ -2,17 +2,19 @@ class Api::V1::SessionsController < ApplicationController
 
   def create
     user = User.where(email: user_params[:email]).first
-    if user.nil? || (!user.authenticate(user_params[:password]))
-      render json: ErrorSerializer.new(Error.new('Your email and/or password are invalid')), status: 400
-    else
-      render json: UsersSerializer.new(user), status: 201
-    end
+    return render json: Error.serialize('Invalid email/password'), status: 400 if invalid_user?(user)
+
+    return render json: user.serialize, status: 201
   end
 
   private 
 
   def user_params
     params.permit(:email, :password, :password_confirmation)
+  end
+
+  def invalid_user?(user)
+    user.nil? || !user.authenticate(user_params[:password])
   end
 
 end
