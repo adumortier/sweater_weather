@@ -142,7 +142,7 @@ Expected response:
         "type": "users",
         "attributes": {
             "email": "email_address_here",
-            "api_key": "api_key_key"
+            "api_key": "api_key_here"
         }
     }
 }
@@ -159,7 +159,7 @@ Expected response:
         "type": "users",
         "attributes": {
             "email": "email_address_here",
-            "api_key": "api_key_key"
+            "api_key": "api_key_here"
         }
     }
 }
