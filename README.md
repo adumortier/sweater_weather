@@ -1,12 +1,6 @@
-### Notification Microservice
+### Sweater Weather API
 
-This notification microservice is used along with the Gard(in)That app. It allows the app to interact with the Google Calendar API and send notifications to users when they have added plants to their virtual garden.
-
-Gard(in)That app repository:
-
-https://github.com/adumortier/gardenthat
-
-Gard(in)That on Heroku
+This sweater weather API is a a 3-day solo project that provides the Sweater Weather App the data it needs for its views. It interacts with the google and openweather and unsplash APIs and returns JSON API 1.0 compliant data.
 
 https://thesweaterweather.herokuapp.com/
 
@@ -69,16 +63,8 @@ Expected response:
                         "temperature": 64,
                         "icon": "http://openweathermap.org/img/wn/02n@2x.png"
                     },
-                    {
-                        "time": "8 PM",
-                        "temperature": 62,
-                        "icon": "http://openweathermap.org/img/wn/02n@2x.png"
-                    },
-                    {
-                        "time": "9 PM",
-                        "temperature": 61,
-                        "icon": "http://openweathermap.org/img/wn/03n@2x.png"
-                    }]
+                    ...
+                    ]
               "forecast_daily": [
                     {
                         "day": "Tuesday",
@@ -96,22 +82,7 @@ Expected response:
                         "low_temp": 52,
                         "icon": "http://openweathermap.org/img/wn/01d@2x.png"
                     },
-                    {
-                        "day": "Thursday",
-                        "description": "Clear",
-                        "precipitation_mm": 0,
-                        "high_temp": 74,
-                        "low_temp": 54,
-                        "icon": "http://openweathermap.org/img/wn/01d@2x.png"
-                    },
-                    {
-                        "day": "Friday",
-                        "description": "Clouds",
-                        "precipitation_mm": 0,
-                        "high_temp": 73,
-                        "low_temp": 58,
-                        "icon": "http://openweathermap.org/img/wn/04d@2x.png"
-                    }
+                    ...
                     ]      
               }
         }
