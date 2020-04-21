@@ -96,7 +96,16 @@ POST api/v1/users?email=<email_address_here>&password=<password_here>&password_c
 ```
 Expected response: 
 ```sh
-
+{
+    "data": {
+        "id": "3",
+        "type": "users",
+        "attributes": {
+            "email": "email_address_here",
+            "api_key": "api_key_key"
+        }
+    }
+}
 ```
 Login a registered user:
 ```
@@ -104,5 +113,36 @@ POST api/v1/sessions?email=<email_address_here>&password=<password_here>
 ```
 Expected response: 
 ```sh
-
+{
+    "data": {
+        "id": "3",
+        "type": "users",
+        "attributes": {
+            "email": "email_address_here",
+            "api_key": "api_key_key"
+        }
+    }
+}
 ```
+
+Returns road trip information for a registered user:
+```
+POST api/v1/road_trip?origin=<origin_here>&destination=<destination_here>&api_key=<api_key_here>
+```
+Expected response: 
+```sh
+{
+    "data": {
+        "id": "poro",
+        "type": "road_trip",
+        "attributes": {
+            "origin": "origin here",
+            "destination": "destination here",
+            "travel_time_in_sec": travel_time_in_sec as integer,
+            "arrival_temp": temperature in Fahrenheit as integer,
+            "arrival_weather": "weather summary at destination"
+        }
+    }
+}
+```
+
