@@ -186,3 +186,4 @@ Expected response:
 }
 ```
 
+[need to add ruby version, api docs, areas of focus for the project]
