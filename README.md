@@ -1,6 +1,6 @@
 ## Sweater Weather API
 
-The sweater weather API is a 3-day solo project that provides the front end of the Sweater Weather App, the data it needs for its views. It consumes the [Google Map Geocoding API](https://developers.google.com/maps/documentation), the [OpenWeather API](https://openweathermap.org/api/one-call-api) and the [Unsplash API](https://unsplash.com/documentation) to return JSON API 1.0 compliant data to the front end. The Sweater Weather API is hosted [here](https://thesweaterweather.herokuapp.com/) but you can also get a local copy and run it locally by following the instructions of the getting started section.
+The sweater weather API is a 3-day solo project that provides the front end of the Sweater Weather App, the data it needs for its views. It consumes the [Google Map Geocoding](https://developers.google.com/maps/documentation), [OpenWeather](https://openweathermap.org/api/one-call-api) and [Unsplash](https://unsplash.com/documentation)APIs to return JSON API 1.0 compliant data to the front end. The Sweater Weather API is hosted [here](https://thesweaterweather.herokuapp.com/) but you can also get a local copy and run it locally by following the instructions of the getting started section.
 
 ## Table of Contents
 
