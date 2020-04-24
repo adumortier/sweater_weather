@@ -18,10 +18,10 @@ The sweater weather API is a 3-day solo project that provides the front end of t
 
 Sweater Weather is a Ruby on Rails API built to meet the following user stories/requirements.
 
-<img src="app/assets/images/root.png" alt="root-page" width="200" height="200">
-<img src="app/assets/images/sign_up.png" alt="root-page" width="200" height="200">
-<img src="app/assets/images/login.png" alt="root-page" width="200" height="200">
-<img src="app/assets/images/road_trup.png" alt="root-page" width="200" height="200">
+<img src="app/assets/images/root.png" alt="root-page" width="500" height="400">
+<img src="app/assets/images/sign_up.png" alt="root-page" width="400" height="400">
+<img src="app/assets/images/login.png" alt="root-page" width="400" height="400">
+<img src="app/assets/images/road_trup.png" alt="root-page" width="400" height="400">
 
 ### Areas of Focus: 
 
