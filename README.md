@@ -1,8 +1,41 @@
 ## Sweater Weather API
 
-The sweater weather API is a a 3-day solo project that provides the Sweater Weather App the data it needs for its views. It interacts with the [Google Map Geocoding API](https://developers.google.com/maps/documentation), the [OpenWeather API](https://openweathermap.org/api/one-call-api) and the [Unsplash APIs](https://unsplash.com/documentation) and returns JSON API 1.0 compliant data.
+The sweater weather API is a 3-day solo project that provides the front end of the Sweater Weather App, the data it needs for its views. It interacts with the [Google Map Geocoding API](https://developers.google.com/maps/documentation), the [OpenWeather API](https://openweathermap.org/api/one-call-api) and the [Unsplash API](https://unsplash.com/documentation) to return JSON API 1.0 compliant data to the front end. The Sweater Weather API is hosted [here](https://thesweaterweather.herokuapp.com/) but you can also get a local copy and run it locally by following the instructions of the getting started section.
 
-https://thesweaterweather.herokuapp.com/
+## Table of Contents
+
+* [About the Project](#about-the-project)
+  * [Areas of Focus](#demo)
+  * [Built With](#built-with)
+  * [Schema](#schema)
+* [Getting Started](#getting-started)
+  * [Installation](#installation)
+  * [Testing](#testing)
+* [Acknowledgements](#acknowledgements)
+
+## About The Project
+
+Sweater Weather is a Ruby on Rails API built to meet the following user stories/requirements.  
+
+
+### Areas of Focus: 
+
+- refactoring
+- serializers
+- consuming APIs
+- exposing APIs
+- authentication
+- password encryption
+
+### Built with:
+
+- Ruby: 2.4.1
+- PostgreSQL: 12.2
+- Rails: 5.2.4
+- Continuous Integration: Travis CI
+- Bcrypt (password encryption)
+
+
 
 ## Getting Started
 
@@ -43,6 +76,8 @@ AMYPODE_API_KEY: <YOUR AMYPODE API KEY HERE>
 ```sh
 figaro heroku:set -e production
 ```
+
+### Testing
 
 ## Sweater Weather Access Points 
 
@@ -185,5 +220,4 @@ Expected response:
     }
 }
 ```
-
 [need to add ruby version, api docs, areas of focus for the project]
