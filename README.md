@@ -1,6 +1,6 @@
 ## Sweater Weather API
 
-This sweater weather API is a a 3-day solo project that provides the Sweater Weather App the data it needs for its views. It interacts with the Google, OpenWeather and Unsplash APIs and returns JSON API 1.0 compliant data.
+The sweater weather API is a a 3-day solo project that provides the Sweater Weather App the data it needs for its views. It interacts with the [Google Map Geocoding API](https://developers.google.com/maps/documentation), the [OpenWeather API](https://openweathermap.org/api/one-call-api) and the [Unsplash APIs](https://unsplash.com/documentation) and returns JSON API 1.0 compliant data.
 
 https://thesweaterweather.herokuapp.com/
 
