@@ -5,9 +5,8 @@ The sweater weather API is a 3-day solo project that provides the front end of t
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-  * [Areas of Focus](#demo)
+  * [Areas of Focus](#areas-of-focus)
   * [Built With](#built-with)
-  * [Schema](#schema)
 * [Getting Started](#getting-started)
   * [Installation](#installation)
   * [Testing](#testing)
@@ -43,8 +42,6 @@ Road Trip:<br>
 - Rails: 5.2.4
 - Continuous Integration: Travis CI
 - Bcrypt (password encryption)
-
-
 
 ## Getting Started
 
