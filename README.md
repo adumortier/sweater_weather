@@ -18,7 +18,7 @@ The sweater weather API is a 3-day solo project that provides the front end of t
 
 Sweater Weather is a Ruby on Rails API built to meet the following user stories/requirements.
 
-
+<img src="app/assets/images/root.png" alt="root-page" width="120" height="110">
 
 ### Areas of Focus: 
 
