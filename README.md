@@ -10,8 +10,7 @@ The sweater weather API is a 3-day solo project that provides the front end of t
 * [Getting Started](#getting-started)
   * [Installation](#installation)
   * [Testing](#testing)
-* [Sweater Weather Access Points](#sweater-weater-access-points)
-* [Acknowledgements](#acknowledgements)
+* [Sweater Weather Access Points](#sweater-weather-access-points)
 
 ## About The Project
 
@@ -34,6 +33,7 @@ Road Trip:<br>
 - exposing APIs
 - authentication
 - password encryption
+- stubbing responses with vcr
 
 ### Built with:
 
@@ -84,6 +84,38 @@ figaro heroku:set -e production
 ```
 
 ### Testing
+
+1. Install RSpec
+
+```sh
+bundle install rspec
+```
+2. Require `webmock` in the `spec_helper.rb` file
+
+```sh
+require 'webmock/rspec'
+```
+
+3. Include the `vcr` config block in the `rails_helper.rb` file:
+
+```sh 
+require 'vcr'
+require 'webmock/rspec'
+
+VCR.configure do |config|
+  config.ignore_localhost = true
+  config.cassette_library_dir = 'spec/cassettes'
+  config.hook_into :webmock
+  config.configure_rspec_metadata!
+  config.allow_http_connections_when_no_cassette = true
+  config.filter_sensitive_data('<YOUTUBE_API_KEY>') { ENV['YOUTUBE_API_KEY'] }
+end
+```
+4. Run the test suite from the root directory of the repository
+
+```sh
+bundle exec rspec
+```
 
 ## Sweater Weather Access Points 
 
