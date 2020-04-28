@@ -16,7 +16,7 @@ class WeatherTodayDetails
   end
 
   def convert_to_miles(meter)
-    meter/1600.0.round
+    meter.nil? ? 0 : meter/1600.0.round
   end
 
 end
