@@ -1,5 +1,7 @@
 ## Sweater Weather API
 
+[![Build Status](https://travis-ci.com/adumortier/sweater_weather.svg?branch=master)](https://travis-ci.com/github/adumortier/sweater_weather)
+
 The Sweater Weather API is a 3-day solo project aimed at providing the front-end of the Sweater Weather App, the data needed needs for the views. It consumes the [Google Map Geocoding](https://developers.google.com/maps/documentation), [OpenWeather](https://openweathermap.org/api/one-call-api) and [Unsplash](https://unsplash.com/documentation) APIs to return JSON API 1.0 compliant data to the front end. You can test the Sweater Weather's endpoints on [Heroku](https://thesweaterweather.herokuapp.com/api/v1/forecast?location=denver) or get a copy and run it locally by following the instructions [here](#getting-started).
 
 ## Table of Contents
